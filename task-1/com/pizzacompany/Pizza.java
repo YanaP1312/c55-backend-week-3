@@ -15,7 +15,7 @@ public class Pizza {
     }
 
     public double getTotalPrice(){
-        double toppingsPrice = toppings.stream().filter(topping -> topping != null).mapToDouble(Topping::getPrice).sum();
+        double toppingsPrice = toppings.stream().filter(Objects::nonNull).mapToDouble(Topping::getPrice).sum();
 
 
         return size.getBasePrice() + toppingsPrice;

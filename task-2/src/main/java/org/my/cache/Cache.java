@@ -1,24 +1,31 @@
 package org.my.cache;
 
-class Cache<T> {
+import java.util.HashMap;
+import java.util.Map;
+
+public class Cache<T> {
+  private final Map<String, T> casheInfo = new HashMap<>();
+
   public void put(String key, T value) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    casheInfo.put(key, value);
   }
 
   public T get(String key) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return casheInfo.get(key);
+
   }
 
   public T remove(String key) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return casheInfo.remove(key);
   }
 
   public int size() {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return casheInfo.size();
   }
 
   public void clear() {
-    throw new UnsupportedOperationException("Not implemented yet");
+    casheInfo.clear();
   }
 
 }
+

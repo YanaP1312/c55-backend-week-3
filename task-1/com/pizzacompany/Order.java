@@ -2,7 +2,7 @@ package pizzacompany;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.Objects;
 
 public class Order {
     List<Pizza> pizzas = new ArrayList<>();
@@ -14,12 +14,12 @@ public class Order {
     }
 
     public double getTotalPrice(){
-        return pizzas.stream().filter(pizza -> pizza != null).mapToDouble(Pizza::getTotalPrice).sum();
+        return pizzas.stream().filter(Objects::nonNull).mapToDouble(Pizza::getTotalPrice).sum();
     }
 
     public void printReceipt(){
         System.out.println("=== Receipt ===");
-        pizzas.stream().filter(pizza -> pizza != null).forEach(pizza -> System.out.println(pizza.toString()));
+        pizzas.stream().filter(Objects::nonNull).forEach(pizza -> System.out.println(pizza.toString()));
         System.out.println("---------------");
         System.out.println("Total: " +getTotalPrice());
     }
