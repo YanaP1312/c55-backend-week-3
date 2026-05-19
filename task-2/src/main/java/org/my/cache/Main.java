@@ -12,6 +12,7 @@ System.out.println(cacheUsers.remove("user1") + " is removed");
 cacheUsers.clear();
 System.out.println("Cache user size is " + cacheUsers.size());
 
+
 Cache<Double> cacheWeight = new Cache<>();
 cacheWeight.put("Anna", 53.7);
 cacheWeight.put("Alex", 68.5);
